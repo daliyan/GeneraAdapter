@@ -2,7 +2,8 @@ int dimen activity_horizontal_margin 0x7f060000
 int dimen activity_vertical_margin 0x7f060001
 int drawable cosmos_no_image_icon 0x7f020000
 int drawable ic_launcher 0x7f020001
-int id action_settings 0x7f080003
+int id action_settings 0x7f080004
+int id content 0x7f080003
 int id image 0x7f080001
 int id listView1 0x7f080000
 int id txt 0x7f080002

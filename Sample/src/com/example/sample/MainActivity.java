@@ -18,20 +18,17 @@ public class MainActivity extends Activity {
 	ListView mListView;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+		super.onCreate(savedInstanceState); 
 		setContentView(R.layout.activity_main);
 		mListView = (ListView) findViewById(R.id.listView1);
 		for (int i = 0; i < 80; i++) {
 			if (i % 2 == 0) {
-				mDatas.add(new Item(
-						"gerneral Adapter"+i,
-						"http://git-scm.com/images/icons/nav-download-gui.png"));
+				mDatas.add(new Item("gernera Adapter"+i,"http://avatar.csdn.net/D/D/6/1_itbailei.jpg","gernera Adapter sample"+i));
 			} else {
-				mDatas.add(new Item("gerneral Adapter"+i,
-						"http://git-scm.com/images/icons/nav-read-book.png"));
+				mDatas.add(new Item("gernera Adapter"+i,"http://git-scm.com/images/icons/nav-read-book.png","gernera Adapter sample"+i));
 			}
 		}
-		mAdapter = new GeneraViewAdapter<MainActivity.Item>(this, mDatas,
+		mAdapter = new GeneraViewAdapter<Item>(this, mDatas,
 				R.layout.item) {
 
 			@Override
@@ -39,6 +36,7 @@ public class MainActivity extends Activity {
 				// TODO Auto-generated method stub
 				viewHolder.setImageViewByUrl(R.id.image, item.url);
 				viewHolder.setTextViewString(R.id.txt, item.name);
+				viewHolder.setTextViewString(R.id.content, item.content);
 			}
 		};
 		mListView.setAdapter(mAdapter);
@@ -52,12 +50,13 @@ public class MainActivity extends Activity {
 	}
 
 	class Item {
-		String name;
-		String url;
-
-		public Item(String name, String url) {
+		public String name;
+		public String url;
+		public String content;
+		public Item(String name, String url,String content) {
 			this.name = name;
 			this.url = url;
+			this.content=content;
 		}
 	}
 }
