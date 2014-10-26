@@ -7,6 +7,7 @@ import com.zwyan.generlviewadapter.adapter.GeneraViewAdapter;
 import com.zwyan.generlviewadapter.adapter.ViewHolder;
 
 import android.os.Bundle;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.view.Menu;
 import android.widget.ListView;
@@ -25,17 +26,19 @@ public class MainActivity extends Activity {
 			if (i % 2 == 0) {
 				mDatas.add(new Item("gernera Adapter"+i,"http://avatar.csdn.net/D/D/6/1_itbailei.jpg","gernera Adapter sample"+i));
 			} else {
-				mDatas.add(new Item("gernera Adapter"+i,"http://git-scm.com/images/icons/nav-read-book.png","gernera Adapter sample"+i));
+				mDatas.add(new Item("gernera Adapter"+i,"https://avatars3.githubusercontent.com/u/8434091?v=2&s=460","gernera Adapter sample"+i));
 			}
 		}
 		mAdapter = new GeneraViewAdapter<Item>(this, mDatas,
 				R.layout.item) {
 
+			@SuppressLint("ResourceAsColor")
 			@Override
 			public void convert(ViewHolder viewHolder, Item item) {
 				// TODO Auto-generated method stub
 				viewHolder.setImageViewByUrl(R.id.image, item.url);
 				viewHolder.setTextViewString(R.id.txt, item.name);
+				viewHolder.setTextViewColor(R.id.content,R.color.red );
 				viewHolder.setTextViewString(R.id.content, item.content);
 			}
 		};
