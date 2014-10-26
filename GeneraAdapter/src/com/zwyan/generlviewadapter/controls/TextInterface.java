@@ -23,4 +23,12 @@ public interface TextInterface {
 	 * @return
 	 */
 	public ViewHolder setEditTextString(int viewId, String text) throws ClassCastException;
+	/**
+	 * 设置TextView的颜色
+	 * @param viewId
+	 * @param colorId 颜色ID
+	 * @return
+	 * @throws ClassCastException
+	 */
+	public ViewHolder setTextViewColor(int viewId,int colorId) throws ClassCastException;
 }

@@ -33,6 +33,7 @@ public class ViewHolder implements ImageInterface, TextInterface {
 	 * 加在網絡圖片的工具
 	 */
 	private ImageLoaderTool imageLoaderTool;
+	Context mContext;
 
 	/**
 	 * 初始化ViewHolder對象信息
@@ -44,6 +45,7 @@ public class ViewHolder implements ImageInterface, TextInterface {
 	 */
 	public ViewHolder(Context context, ViewGroup parent, int layoutId,
 			int position) {
+		this.mContext=context;
 		imageLoaderTool = new ImageLoaderTool(context);
 		mViews = new SparseArray<View>();
 		mConvertView = LayoutInflater.from(context).inflate(layoutId, parent,
@@ -99,6 +101,7 @@ public class ViewHolder implements ImageInterface, TextInterface {
 	public ViewHolder setTextViewString(int viewId, String text)
 			throws ClassCastException {
 		TextView view = getView(viewId);
+		//view.setTextColor(mContext.getResources().getColor(R.color.black));
 		view.setText(text);
 		return this;
 	}
@@ -131,6 +134,14 @@ public class ViewHolder implements ImageInterface, TextInterface {
 			throws ClassCastException {
 		ImageButton view = getView(viewId);
 		view.setImageResource(drawableId);
+		return this;
+	}
+
+	@Override
+	public ViewHolder setTextViewColor(int viewId, int colorId)
+			throws ClassCastException {
+		TextView view = getView(viewId);
+		view.setTextColor(mContext.getResources().getColor(colorId));
 		return this;
 	}
 
