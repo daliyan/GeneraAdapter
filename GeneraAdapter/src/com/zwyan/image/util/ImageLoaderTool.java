@@ -9,7 +9,6 @@ import android.graphics.Bitmap;
 import android.view.View;
 import android.widget.ImageView;
 
-
 import com.example.testlibary.R;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -21,10 +20,12 @@ import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
+
 /**
  * 浣跨敤寮�簮椤圭洰Image-Loader鏉ュ姞杞界綉缁滀笂鐨勫浘鐗�
+ * 
  * @author zw.yan
- *
+ * 
  */
 public class ImageLoaderTool {
 
@@ -44,9 +45,12 @@ public class ImageLoaderTool {
 		options = new DisplayImageOptions.Builder()
 				.showStubImage(R.drawable.cosmos_no_image_icon)
 				.showImageForEmptyUri(R.drawable.cosmos_no_image_icon)
-				.showImageOnFail(R.drawable.cosmos_no_image_icon)// 涓嬭級澶辨晽寰岄’绀虹殑鍦栫墖
-				.cacheInMemory()// 鏄惁绶╁瓨鍦ㄥ収瀛樹腑
-				.cacheOnDisc()//鏄惁绶╁瓨鍦⊿D鍗¤闈�
+				.showImageOnFail(R.drawable.cosmos_no_image_icon)
+				// 涓嬭級澶辨晽寰岄’绀虹殑鍦栫墖
+				.cacheInMemory()
+				// 鏄惁绶╁瓨鍦ㄥ収瀛樹腑
+				.cacheOnDisc()
+				// 鏄惁绶╁瓨鍦⊿D鍗¤闈�
 				.displayer(new SimpleBitmapDisplayer())
 				.imageScaleType(ImageScaleType.EXACTLY_STRETCHED).build();
 		config = new ImageLoaderConfiguration.Builder(
@@ -55,16 +59,15 @@ public class ImageLoaderTool {
 				.denyCacheImageMultipleSizesInMemory()
 				.discCacheFileNameGenerator(new Md5FileNameGenerator())
 				.discCacheFileCount(60)
-				.tasksProcessingOrder(QueueProcessingType.LIFO)
-				.build();
+				.tasksProcessingOrder(QueueProcessingType.LIFO).build();
 		imageLoader.init(config);
 	}
 
-	public void loadImageView(String imageUrl,ImageView image){
-		imageLoader.displayImage(imageUrl, image, options,
-				animateFirstListener);
+	public void loadImageView(String imageUrl, ImageView image) {
+		imageLoader
+				.displayImage(imageUrl, image, options, animateFirstListener);
 	}
-	
+
 	private static class AnimateFirstDisplayListener extends
 			SimpleImageLoadingListener {
 

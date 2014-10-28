@@ -45,7 +45,7 @@ public class ViewHolder implements ImageInterface, TextInterface {
 	 */
 	public ViewHolder(Context context, ViewGroup parent, int layoutId,
 			int position) {
-		this.mContext=context;
+		this.mContext = context;
 		imageLoaderTool = new ImageLoaderTool(context);
 		mViews = new SparseArray<View>();
 		mConvertView = LayoutInflater.from(context).inflate(layoutId, parent,
@@ -100,78 +100,85 @@ public class ViewHolder implements ImageInterface, TextInterface {
 	@Override
 	public ViewHolder setTextViewString(int viewId, String text)
 			throws ClassCastException {
-		View a= getView(viewId);
-		if(a instanceof TextView){
-			TextView view =(TextView) a;
+		View a = getView(viewId);
+		if (a instanceof TextView) {
+			TextView view = (TextView) a;
 			view.setText(text);
 			return this;
-		}else{
-			throw new ClassCastException(viewId+" is not a TextView so can't setTextViewString");
+		} else {
+			throw new ClassCastException(viewId
+					+ " is not a TextView so can't setTextViewString");
 		}
-		
+
 	}
 
 	@Override
-	public ViewHolder setImageViewByResource(int viewId, int drawableId){
-		View a= getView(viewId);
-		if(a instanceof ImageView){
+	public ViewHolder setImageViewByResource(int viewId, int drawableId) {
+		View a = getView(viewId);
+		if (a instanceof ImageView) {
 			ImageView view = (ImageView) a;
 			view.setImageResource(drawableId);
 			return this;
-		}else{
-			throw new ClassCastException(viewId+" is not a ImageView so can't setImageViewByResource");
+		} else {
+			throw new ClassCastException(viewId
+					+ " is not a ImageView so can't setImageViewByResource");
 		}
-		
+
 	}
 
 	@Override
-	public ViewHolder setImageViewByUrl(int viewId, String url){
-		View a= getView(viewId);
-		if(a instanceof ImageView){
+	public ViewHolder setImageViewByUrl(int viewId, String url) {
+		View a = getView(viewId);
+		if (a instanceof ImageView) {
 			imageLoaderTool.loadImageView(url, (ImageView) a);
 			return this;
-		}else{
-			throw new ClassCastException(viewId+" is not a setImageViewByResource so can't setImageViewByUrl");
+		} else {
+			throw new ClassCastException(
+					viewId
+							+ " is not a setImageViewByResource so can't setImageViewByUrl");
 		}
 	}
 
 	@Override
 	public ViewHolder setEditTextString(int viewId, String text) {
-		View a= getView(viewId);
-		if(a instanceof EditText){
-			EditText view =(EditText) a;
+		View a = getView(viewId);
+		if (a instanceof EditText) {
+			EditText view = (EditText) a;
 			view.setText(text);
 			return this;
-		}else{
-			throw new ClassCastException(viewId+" is not a EditText so can't setEditTextString");
+		} else {
+			throw new ClassCastException(viewId
+					+ " is not a EditText so can't setEditTextString");
 		}
-		
+
 	}
 
 	@Override
-	public ViewHolder setImageButtonByResource(int viewId, int drawableId){
-		View a= getView(viewId);
-		if(a instanceof ImageButton){
+	public ViewHolder setImageButtonByResource(int viewId, int drawableId) {
+		View a = getView(viewId);
+		if (a instanceof ImageButton) {
 			ImageButton view = (ImageButton) a;
 			view.setImageResource(drawableId);
 			return this;
-		}else{
-			throw new ClassCastException(viewId+" is not a ImageButton so can't setImageButtonByResource");
+		} else {
+			throw new ClassCastException(viewId
+					+ " is not a ImageButton so can't setImageButtonByResource");
 		}
-		
+
 	}
 
 	@Override
-	public ViewHolder setTextViewColor(int viewId, int colorId){
-		View a= getView(viewId);
-		if(a instanceof TextView){
+	public ViewHolder setTextViewColor(int viewId, int colorId) {
+		View a = getView(viewId);
+		if (a instanceof TextView) {
 			TextView view = (TextView) a;
 			view.setTextColor(mContext.getResources().getColor(colorId));
 			return this;
-		}else{
-			throw new ClassCastException(viewId+" is not a TextView so can't setTextViewColor");
+		} else {
+			throw new ClassCastException(viewId
+					+ " is not a TextView so can't setTextViewColor");
 		}
-		
+
 	}
 
 }
