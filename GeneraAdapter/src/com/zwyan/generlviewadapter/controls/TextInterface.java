@@ -14,7 +14,7 @@ public interface TextInterface {
 	 * @param text 要设置的文本字符
 	 * @return
 	 */
-	public ViewHolder setTextViewString(int viewId, String text) throws ClassCastException;
+	public ViewHolder setTextViewString(int viewId, String text);
 	
 	/**
 	 * 设置EditText显示文本
@@ -22,7 +22,7 @@ public interface TextInterface {
 	 * @param text 要设置的文本字符
 	 * @return
 	 */
-	public ViewHolder setEditTextString(int viewId, String text) throws ClassCastException;
+	public ViewHolder setEditTextString(int viewId, String text);
 	/**
 	 * 设置TextView的颜色
 	 * @param viewId
@@ -30,5 +30,5 @@ public interface TextInterface {
 	 * @return
 	 * @throws ClassCastException
 	 */
-	public ViewHolder setTextViewColor(int viewId,int colorId) throws ClassCastException;
+	public ViewHolder setTextViewColor(int viewId,int colorId);
 }
