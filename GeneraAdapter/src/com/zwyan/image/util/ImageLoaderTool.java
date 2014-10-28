@@ -1,12 +1,7 @@
 package com.zwyan.image.util;
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.view.View;
 import android.widget.ImageView;
 
 import com.example.testlibary.R;
@@ -17,16 +12,9 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
-import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
-import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 
-/**
- * 浣跨敤寮�簮椤圭洰Image-Loader鏉ュ姞杞界綉缁滀笂鐨勫浘鐗�
- * 
- * @author zw.yan
- * 
- */
+
 public class ImageLoaderTool {
 
 	private ImageLoadingListener animateFirstListener = new AnimateFirstDisplayListener();
@@ -46,11 +34,8 @@ public class ImageLoaderTool {
 				.showStubImage(R.drawable.cosmos_no_image_icon)
 				.showImageForEmptyUri(R.drawable.cosmos_no_image_icon)
 				.showImageOnFail(R.drawable.cosmos_no_image_icon)
-				// 涓嬭級澶辨晽寰岄’绀虹殑鍦栫墖
 				.cacheInMemory()
-				// 鏄惁绶╁瓨鍦ㄥ収瀛樹腑
 				.cacheOnDisc()
-				// 鏄惁绶╁瓨鍦⊿D鍗¤闈�
 				.displayer(new SimpleBitmapDisplayer())
 				.imageScaleType(ImageScaleType.EXACTLY_STRETCHED).build();
 		config = new ImageLoaderConfiguration.Builder(
@@ -68,7 +53,7 @@ public class ImageLoaderTool {
 				.displayImage(imageUrl, image, options, animateFirstListener);
 	}
 
-	private static class AnimateFirstDisplayListener extends
+	/*private static class AnimateFirstDisplayListener extends
 			SimpleImageLoadingListener {
 
 		static final List<String> displayedImages = Collections
@@ -86,5 +71,5 @@ public class ImageLoaderTool {
 				}
 			}
 		}
-	}
+	}*/
 }

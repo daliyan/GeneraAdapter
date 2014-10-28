@@ -98,8 +98,7 @@ public class ViewHolder implements ImageInterface, TextInterface {
 	}
 
 	@Override
-	public ViewHolder setTextViewString(int viewId, String text)
-			throws ClassCastException {
+	public ViewHolder setTextViewString(int viewId, String text) {
 		View a = getView(viewId);
 		if (a instanceof TextView) {
 			TextView view = (TextView) a;
